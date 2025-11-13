@@ -1,5 +1,3 @@
-
-
 import csv
 import json
 
@@ -20,19 +18,18 @@ with open('netflix_titles.tsv', mode='r', encoding='utf-8') as input_file:
         if directors_input:
             parts_d = directors_input.split(',')
             for director in parts_d:
-                directors.append(director)
+                directors.append(director.strip())
 
         cast = []
         if cast_input:
             parts_c = cast_input.split(',')
             for actor in parts_c:
-                cast.append(actor)
+                cast.append(actor.strip())
 
         genres = []
         if genres_input:
-            parts_g = genres_input.split(',')
-            for genre in parts_g:
-                genres.append(genre)
+            genres = genres_input.split(',')
+           
 
         
         if startyear_input:
@@ -53,3 +50,4 @@ with open('netflix_titles.tsv', mode='r', encoding='utf-8') as input_file:
 
 with open('hw02_output.json', mode='w', encoding='utf-8') as output_file:
     json.dump(movies, output_file, ensure_ascii= False, indent=4)
+
