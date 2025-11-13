@@ -1,7 +1,6 @@
 import csv
 import json
 
-
 movies = []
 
 with open('netflix_titles.tsv', mode='r', encoding='utf-8') as input_file:
@@ -30,8 +29,6 @@ with open('netflix_titles.tsv', mode='r', encoding='utf-8') as input_file:
         if genres_input:
             genres = genres_input.split(',')
            
-
-        
         if startyear_input:
             year = int(startyear_input)
             decade = (year // 10) * 10
@@ -50,4 +47,3 @@ with open('netflix_titles.tsv', mode='r', encoding='utf-8') as input_file:
 
 with open('hw02_output.json', mode='w', encoding='utf-8') as output_file:
     json.dump(movies, output_file, ensure_ascii= False, indent=4)
-
